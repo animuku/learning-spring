@@ -1,11 +1,12 @@
-package com.example.payroll;
+package com.example.payroll.entrypoint;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
-import javax.swing.text.html.parser.Entity;
+import com.example.payroll.domain.Employee;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,7 +16,7 @@ public class EmployeeModelAssembler
   @Override
   public EntityModel<Employee> toModel(Employee employee) {
     return EntityModel.of(employee,
-        linkTo(methodOn(EmployeeController.class).one(employee.getId())).withSelfRel(),
+        WebMvcLinkBuilder.linkTo(methodOn(EmployeeController.class).one(employee.getId())).withSelfRel(),
         linkTo(methodOn(EmployeeController.class).all()).withRel("employees"));
   }
 }

@@ -1,4 +1,4 @@
-package com.example.payroll;
+package com.example.payroll.domain;
 
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -27,7 +27,7 @@ public class Order {
 
   Order() {}
 
-  Order(String description, Status status) {
+  public Order(String description, Status status) {
     this.description = description;
     this.status = status;
   }

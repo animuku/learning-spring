@@ -1,4 +1,4 @@
-package com.example.payroll;
+package com.example.payroll.domain;
 
 public enum Status {
   IN_PROGRESS,

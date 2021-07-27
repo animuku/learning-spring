@@ -1,4 +1,4 @@
-package com.example.payroll;
+package com.example.payroll.domain;
 
 import java.util.Objects;
 import javax.persistence.Entity;
@@ -28,7 +28,7 @@ public class Employee {
 
   Employee() {}
 
-  Employee(String firstName, String lastName, String role) {
+  public Employee(String firstName, String lastName, String role) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.role = role;
